@@ -74,25 +74,27 @@
   }
   .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--sage); }
 
-  /* The phone: the app's own screen, in a frame the width of a real one. */
+  /* The same device the onboarding shows, turned the same way: a rim of
+     brushed metal, a black bezel, and the app's own sage light behind it. */
+  .stage { justify-self: center; perspective: 900px; }
   .phone {
-    justify-self: center;
-    width: 290px;
+    position: relative;
+    width: 268px;
+    transform: rotateY(18deg) rotateX(4deg) rotateZ(-5deg);
     border-radius: 44px;
-    padding: 10px;
-    background: linear-gradient(160deg, #2A2D30, #101214);
-    box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
+    padding: 3px;
+    background: linear-gradient(135deg, #8A8D91 0%, #3A3C3F 35%, #6B6E72 70%, #2E3033 100%);
+    box-shadow:
+      -16px 24px 40px rgba(0,0,0,0.7),
+      0 0 90px rgba(168,196,106,0.18);
   }
-  /* The top of the app, cut where the screen stops being the point: the
-     greeting, the day's figure, the week and the two things you can do. */
-  .phone img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 9 / 11;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 35px;
-  }
+  .bezel { background: #000; border-radius: 41px; padding: 6px; }
+  .phone img { display: block; width: 100%; border-radius: 35px; }
+  /* The buttons on the edge that faces us. */
+  .btn { position: absolute; left: -3px; width: 4px; border-radius: 2px; background: #5A5D61; }
+  .btn.mute { top: 118px; height: 30px; }
+  .btn.up { top: 162px; height: 52px; }
+  .btn.down { top: 224px; height: 52px; }
 
   section { padding: 72px 0; border-bottom: 1px solid var(--line); }
   h2 { font-size: 13px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--faint); font-weight: 500; margin: 0 0 28px; }
@@ -122,7 +124,7 @@
     header.hero { padding: 40px 0 64px; }
     .brand { margin-bottom: 40px; }
     h1 { font-size: 38px; letter-spacing: -1px; }
-    .phone { width: 250px; }
+    .phone { width: 230px; transform: rotateY(12deg) rotateZ(-3deg); }
     section { padding: 52px 0; }
   }
 </style>
@@ -146,8 +148,13 @@
         <span class="pill"><span class="dot"></span> Coming to the App Store</span>
       </div>
 
-      <div class="phone">
-        <img src="today.png" alt="The Today screen: minutes reclaimed today, the week so far, and the lists standing guard.">
+      <div class="stage">
+        <div class="phone">
+          <span class="btn mute"></span><span class="btn up"></span><span class="btn down"></span>
+          <div class="bezel">
+            <img src="today.jpg" alt="The Today screen: minutes reclaimed today, the week so far, and where the day went.">
+          </div>
+        </div>
       </div>
     </div>
   </div>
