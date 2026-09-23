@@ -83,7 +83,16 @@
     background: linear-gradient(160deg, #2A2D30, #101214);
     box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
   }
-  .phone img { display: block; width: 100%; border-radius: 35px; }
+  /* The top of the app, cut where the screen stops being the point: the
+     greeting, the day's figure, the week and the two things you can do. */
+  .phone img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 11;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 35px;
+  }
 
   section { padding: 72px 0; border-bottom: 1px solid var(--line); }
   h2 { font-size: 13px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--faint); font-weight: 500; margin: 0 0 28px; }
@@ -138,7 +147,7 @@
       </div>
 
       <div class="phone">
-        <img src="today.webp" alt="The Today screen: minutes reclaimed, where the day went, and what is blocking now.">
+        <img src="today.png" alt="The Today screen: minutes reclaimed today, the week so far, and the lists standing guard.">
       </div>
     </div>
   </div>
