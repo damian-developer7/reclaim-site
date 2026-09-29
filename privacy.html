@@ -97,14 +97,23 @@
         <strong>Feedback, only when you send it.</strong> What you write in Settings → Feedback,
         with the app version and iOS version, so we can reproduce a problem.
       </li>
+      <li>
+        <strong>Which parts of the app you reach.</strong> A short list of moments — the app was
+        opened, an onboarding screen was reached, a permission was answered, a list was made, the
+        price was shown, a plan was started, a coach was asked — sent under the same random
+        identifier. It is how we find out where people get stuck: whether they leave at the
+        permission, at the price, or somewhere we did not expect. Never what you block, never a
+        minute of your screen time, never a word you said to a coach.
+      </li>
     </ul>
 
     <h2>Who handles it</h2>
     <p>
       <strong>Supabase</strong> hosts our database and server function, in the European Union
       (Ireland). <strong>Anthropic</strong> provides the AI that writes Reid's replies; it receives
-      only the request described above. Neither is allowed to use your data for anything but
-      providing that service to us.
+      only the request described above. <strong>PostHog</strong> receives the list of moments
+      above, on its European servers (Frankfurt), and nothing else. None of them is allowed to use
+      your data for anything but providing that service to us.
     </p>
 
     <h2>What we never do</h2>
